@@ -6,6 +6,4 @@ def view_notes():
     for i in f:
         if choice_2 in i:
             print(i)
-        # else:
-        #     print("The file your are searching is not within Notebook..!")
-
+       
