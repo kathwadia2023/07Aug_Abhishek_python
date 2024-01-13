@@ -1,0 +1,361 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="description" content="">
+    <meta name="author" content="">
+   
+    <title>About</title>
+
+    <link rel="icon" type="image/x-icon" href="/static/images/favicon.png" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous">
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+
+{% comment %} Style for plan table start {% endcomment %}
+<style>@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap");
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Source Sans Pro", sans-serif;
+    }
+    body {
+      background-color: #dff9fb;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    h1 {
+      text-align: center;
+      margin-top: 2rem;
+    }
+    p {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+    .pricing {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+  
+      .plan {
+        background-color: #fff;
+        padding: 2.5rem;
+        margin: 12px;
+        border-radius: 5px;
+        text-align: center;
+        transition: 0.3s;
+        cursor: pointer;
+  
+        h2 {
+          font-size: 22px;
+          margin-bottom: 12px;
+        }
+  
+        .price {
+          margin-bottom: 1rem;
+          font-size: 30px;
+        }
+  
+        ul.features {
+          list-style-type: none;
+          text-align: left;
+          li {
+            margin: 8px;
+            .fas {
+              margin-right: 4px;
+            }
+            .fa-check-circle {
+              color: #6ab04c;
+            }
+            .fa-times-circle {
+              color: #eb4d4b;
+            }
+          }
+        }
+  
+        button {
+          border: none;
+          width: 100%;
+          padding: 12px 35px;
+          margin-top: 1rem;
+          background-color: #6ab04c;
+          color: #fff;
+          border-radius: 5px;
+          cursor: pointer;
+          font-size: 16px;
+        }
+  
+        &.popular {
+          border: 2px solid #6ab04c;
+          position: relative;
+          transform: scale(1.08);
+  
+          span {
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #6ab04c;
+            color: #fff;
+            padding: 4px 20px;
+            font-size: 18px;
+            border-radius: 5px;
+          }
+        }
+  
+        &:hover {
+          box-shadow: 5px 7px 67px -28px rgba(0, 0, 0, 0.37);
+        }
+      }
+    }</style>
+  
+{% comment %} Style for plan table end {% endcomment %}
+  
+
+</head>
+
+<body style="background-image: url(/static/images/bg3.jepg); background-size:cover;"  >
+
+
+<!-- NAV BAR START -->
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #81b1ce;">
+    {% comment %} nav barcolor 1 95f0f5,  aad6ec {% endcomment %}
+    <div class="container-fluid">
+
+      {% comment %} <a class="navbar-brand" href="#">NotesApp</a> {% endcomment %}
+  <a class="navbar-brand"  href="#">
+    <img src="/static/images/footer_logo_png.png" alt="Logo" width="150" height="100" class="d-inline-block align-text-top">
+    </a>    
+ 
+ <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/">Home</a>
+          </li>
+       
+          <li class="nav-item" >
+              <a class="nav-link active" aria-current="page" href="/appointment">Appointments</a>
+            </li>
+        
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="/contact">Contact</a>
+            </li>
+         
+
+
+        </ul>
+        {% comment %} <form class="d-flex" role="search">
+          <input
+            class="form-control me-2"
+            type="search"
+            placeholder="Search"
+            aria-label="Search"
+          /> {% endcomment %}
+        
+  
+        </form>
+        <button class="btn btn-outline-primary mx-2" data-bs-toggle="modal" data-bs-target="#loginModal" type="">
+          Login
+        </button><button class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#signupModal" type="" >
+          Signup
+        </button>
+      </div>
+    </div>
+  </nav>
+<!-- NAV BAR END -->
+
+
+{% comment %} column pattern start {% endcomment %}
+<div class="container text-center my-5">
+    <div class="row align-items-center">
+      <div class="col">
+        <div class="card" style="width: 18rem;">
+          <img src="/static/images/doc 5.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Dr Arnold Newgate</h5>
+            <p class="card-text">MBBS MD ENT[Eyes Nose Throat] HomeGround Doctor</p>
+            <a href="#" class="btn btn-primary">Book Appointment </a>
+          </div>
+        </div> 
+      </div>
+      <div class="col">
+        <div class="card" style="width: 18rem;">
+          <img src="/static/images/doc 3.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Dr. Kamal Khan</h5>
+            <p class="card-text">MBBS MD - Senior Oncologist On Team [MD of Healthify Pvt ltd.]</p>
+            <a href="#" class="btn btn-primary">Book Appointment</a>
+          </div>
+        </div> 
+      </div>
+      <div class="col">
+        <div class="card" style="width: 18rem;">
+          <img src="/static/images/doc 4.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Dr. Charlotte West</h5>
+            <p class="card-text">MBBS Gynecologist, Expert in Childs specialist </p>
+            <a href="#" class="btn btn-primary">Book Appointment</a>
+          </div>
+        </div> 
+      </div>
+    </div>
+  </div>
+{% comment %} column pattern End {% endcomment %}
+
+{% comment %} Plan TABLE start {% endcomment %}
+<h1>Our Services And Packages</h1>
+    <p>
+      Get treated by the best Doctors and Avail the best medical treatment!!! Because Life Matters...
+    </p>
+
+    <div class="pricing">
+      <div class="plan">
+        <h2>Basic</h2>
+        <div class="price">₹500</div>
+        <ul class="features">
+          <li><i class="fas fa-check-circle"></i> New Case</li>
+          <li><i class="fas fa-check-circle"></i> Doctor Consultation</li>
+          <li><i class="fas fa-check-circle"></i> Guidance of Health </li>
+          <li><i class="fas fa-check-circle"></i> <s>Medicial Treatment</s></li>
+          <li><i class="fas fa-times-circle"></i> <s>Medical Reports</s></li>
+          <li><i class="fas fa-check-circle"></i> <s>24/7 Emergency Service</s></li>
+        </ul>
+        <a class="btn" style="background-color: #6DD34A;" href="/appointment">Get Appointment</a>
+      </div>
+      <div class="plan popular">
+        <span>Most Popular</span>
+        <h2>Advance</h2>
+        <div class="price">₹1500</div>
+        <ul class="features">
+          <li><i class="fas fa-check-circle"></i> New Case</li>
+          <li><i class="fas fa-check-circle"></i> Doctor Consultation</li>
+          <li><i class="fas fa-check-circle"></i> Guidance of Health</li>
+          <li><i class="fas fa-check-circle"></i> Medicial Treatment</li>
+          <li><i class="fas fa-check-circle"></i> <s>Medical Reports</s></li>
+          <li><i class="fas fa-check-circle"></i> <s>24/7 Emergency Service</s></li>
+        </ul>
+        <a class="btn" style="background-color: #6DD34A;" href="/appointment">Get Appointment</a>
+      </div>
+      <div class="plan">
+        <h2>Premium</h2>
+        <div class="price">Pricing At billing</div>
+        <ul class="features">
+          <li><i class="fas fa-check-circle"></i> New Case</li>
+          <li><i class="fas fa-check-circle"></i> Doctor Consultation</li>
+          <li><i class="fas fa-check-circle"></i> Guidance of Health</li>
+          <li><i class="fas fa-check-circle"></i> Medicial Treatment</li>
+          <li><i class="fas fa-check-circle"></i> Medical Reports</li>
+          <li><i class="fas fa-check-circle"></i> 24/7 Emergency Service</li>
+        </ul>
+        <a class="btn" style="background-color: #6DD34A;" href="/appointment">Get Appointment</a>
+      </div>
+    </div>
+
+
+{% comment %} Plan Table END {% endcomment %}
+  
+
+{% comment %} footer Start {% endcomment %}
+<!-- FOOTER START -->
+
+  <!-- Remove the container if you want to extend the Footer to full width. -->
+  <div class="" style="width: 100%;">
+    <footer style="background-color: #81b1ce;">
+    <div class="container p-4">
+      <div class="row">
+        <div class="col-lg-6 col-md-12 mb-4">
+          <h5 class="mb-3" style="letter-spacing: 2px; color: #ffc900;"><center>Healthify: The way of life</center></h5>
+          {% comment %} 818963 {% endcomment %}
+          <p>Healthify PVT LTD.
+          <br>Registered Under ICMR and Affiliated by Goverment and Ministry of Ayush.
+          </p>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-4">
+          <h5 class="mb-3" style="letter-spacing: 2px; color: #ffc900;">Links</h5>
+          <ul class="list-unstyled mb-0">
+            
+            <li class="mb-1">
+              <a href="#!" style="color: #4f4f4f;">Appointments</a>
+            </li>
+            {% comment %} <li class="mb-1">
+              <a href="/about" style="color: #4f4f4f;">About</a>
+            </li> {% endcomment %}
+            <li>
+              <a href="/contact" style="color: #4f4f4f;">Contact US</a>
+            </li>
+            <li class="mb-1">
+              <a href="https://www.townscript.com/in/india/running" style="color: #4f4f4f;">Events</a>
+            </li>
+            <li class="mb-1">
+              <a href="https://conferencealerts.co.in/gujarat/medical" style="color: #4f4f4f;">Conferences</a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-4">
+          <h5 class="mb-1" style="letter-spacing: 2px; color: #ffc900;">Opening Hours</h5>
+          <table class="table" style="color: #ffc900; border-color: #666;">
+            <tbody>
+              <tr>
+                <td>Monday - Friday:</td>
+                <td>8am - 9pm</td>
+              </tr>
+              <tr>
+                <td>Saturday - Sunday:</td>
+                <td>8am - 1am</td>
+              </tr>
+              <tr>
+                <td>Emergency:</td>
+                <td>24 X 7</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+      © 2023 Copyright:
+      <a class="text-dark" href="/">Healthify APP ®</a>
+    </div>
+    <!-- Copyright -->
+  </footer>
+  
+  </div>
+  <!-- End of .container -->
+  
+<!-- FOOTER END -->
+
+{% comment %} footer End {% endcomment %}
+
+
+
+
+</body>
+
+</html>
