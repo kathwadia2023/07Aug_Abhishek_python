@@ -9,8 +9,11 @@ urlpatterns = [
     path('updatedata/<int:id>', views.update),
     path('deletedata/<int:id>',views.deletedata),
 
+
     path('getall/', views.getall, ),
     path('getstud/<int:id>', views.getstud),
     path('deletestud/<int:id>', views.deletestud),
+    path('savedata/',views.savedata),
+    path('update_data/<int:id>',views.update_data),
 
 ]

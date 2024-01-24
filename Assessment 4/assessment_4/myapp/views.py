@@ -78,3 +78,32 @@ def deletestud(request,id):
         return Response(status=status.HTTP_202_ACCEPTED)
     else:
         return Response(status=status.HTTP_400_BAD_REQUEST)
+
+@api_view(['POST'])
+def savedata(request):
+    if request.method=='POST':
+        savereq=blog_ser(data=request.data)
+        if savereq.is_valid():
+            savereq.save()
+            return Response(status=status.HTTP_201_CREATED)
+        else:
+            return Response(status=status.HTTP_400_BAD_REQUEST)
+    return Response(status=status.HTTP_400_BAD_REQUEST)
+
+@api_view(['GET','PUT'])
+def update_data(request,id):
+    try:
+        stid=blog_data.objects.get(id=id)
+    except blog_data.DoesNotExist:
+        return Response(status=status.HTTP_404_NOT_FOUND)
+    if request.method=='GET':
+        stserail=blog_ser(stid)
+        return Response(data=stserail.data)
+    if request.method=='PUT':
+        updatereq=blog_ser(data=request.data,instance=stid)
+        if updatereq.is_valid():
+            updatereq.save()
+            return Response(status=status.HTTP_202_ACCEPTED)
+        else:
+            return Response(status=status.HTTP_400_BAD_REQUEST)
+
